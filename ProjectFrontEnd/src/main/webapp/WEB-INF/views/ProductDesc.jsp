@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Product Description</title>
+<title>Insert title here</title>
 </head>
 <body>
 
+<jsp:include page="UserHeader.jsp"></jsp:include>
 <table>
 
 	<tr>
@@ -16,18 +17,35 @@
 		</td>
 		<td>&nbsp;</td>
 	</tr>
-	<tr>
-		<td>Product ID :${product.productId}</td>
-	</tr>
+
 	<tr>
 		<td>Product Name :${product.productName}</td>
 	</tr>
 	<tr>
 		<td>Product Desc :${product.productDesc}</td>
 	</tr>
-	
-
+		<tr>
+		<td>Product Price :${product.price}</td>
+	</tr>
+		
 
 </table>
+
+<div class="section" style="padding-bottom:20px;">
+<form action="${pageContext.request.contextPath}/addToCart" method="post">
+	<input type="hidden" value="${product.productId }" name="pId">
+	<input type="hidden" value="${product.price }" name="pPrice">
+	<input type="hidden" value="${product.productName }" name="productName">
+<%-- 	<input type="hidden" value="${product.pimage }" name="imgname">
+ --%>	
+	<input type="number" class="form-control" name="quantity" required>
+	
+	<input class="btn btn-primary btn-lg" type="submit" value="Add To Cart">
+	
+	
+
+</form>
+</div>
+
 </body>
 </html>

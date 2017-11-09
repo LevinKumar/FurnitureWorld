@@ -1,100 +1,130 @@
-<%@ page language="java" contentType="text/html" import="com.model.User"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Signup Form</title>
-<link rel='stylesheet' href='js-form-validation.css' type='text/css' />  
-<script src="validation.js"></script>  
+    <div class="container">
 
-<style>
+    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+<fieldset>
 
-body, html
-{
-    height: 100%;
-    margin: 0;
-}
+<!-- Form Name -->
+<legend><center><h2><b>Registration Form</b></h2></center></legend><br>
 
-.bg {
-    
-    background-image: url("resources/Signupin BG.jpg");    
-    height: 100%;     
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+<!-- Text input-->
 
-
-</style>
-
-</head>
-
-<body  onload="document.registration.userid.focus();">
-
-<div class="bg">
-
-<jsp:include page="header.jsp"></jsp:include>
-
-
- <div class="container">  
-<h2><font color="black" >Registration Page</font></h2>
-
-
-<form name='registration' onSubmit="return formValidation();">  
-<form:form action="AddUser" modelAttribute="user"> 
-
-
-	<div class="form-group">
-	<div style="margin-bottom: 25px" class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>    
-    <input id="login-userName" type="text" class="form-control" name="userName" value="" placeholder="username"required>                                        
+<div class="form-group">
+  <label class="col-md-4 control-label">First Name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
     </div>
-    </div>
-	
-	<div class="form-group">
-	<div style="margin-bottom: 25px" class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>    
-    <input id="userEmail" type="text" class="form-control" name="userEmail" value="" placeholder="Please enter your email"required>                                        
-    </div>
-    </div>
-	
-	<div class="form-group">
-	<div style="margin-bottom: 25px" class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>    
-    <input id="userPassword" type="password" class="form-control" name="userPassword" value="" placeholder="Please type the password"required>                                        
-    </div>
-    </div>
-	
-	<div class="form-group">
-	<div style="margin-bottom: 25px" class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>    
-    <input id="userPhone" type="text" class="form-control" name="userPhone" value="" placeholder="Enter phone number"required>                                        
-    </div>
-    </div>
-    
-	<div class="form-group">
-	<div style="margin-bottom: 25px" class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>    
-    <input id="userAddress" type="text" class="form-control" name="userAddress" value="" placeholder="Enter address"required>                                        
-    </div>
-    </div>
-		
-	<br>
-		<center>
-	<button type="submit" class="btn btn-lg btn-info">Submit</button>
-	<button type="reset"  class="btn btn-lg btn-info">Cancel</button>
-	</center>	
-		
-
-
-
-</form:form>
-</form>
-
-</div> 
+  </div>
 </div>
 
-</body>
-</html>
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Last Name</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+  <div class="form-group"> 
+  <label class="col-md-4 control-label">Department / Office</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="department" class="form-control selectpicker">
+      <option value="">Select your Department/Office</option>
+      <option>Department of Engineering</option>
+      <option>Department of Agriculture</option>
+      <option >Accounting Office</option>
+      <option >Tresurer's Office</option>
+      <option >MPDC</option>
+      <option >MCTC</option>
+      <option >MCR</option>
+      <option >Mayor's Office</option>
+      <option >Tourism Office</option>
+    </select>
+  </div>
+</div>
+</div>
+  
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Username</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="user_name" placeholder="Username" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Password</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="user_password" placeholder="Password" class="form-control"  type="password">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Confirm Password</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="confirm_password" placeholder="Confirm Password" class="form-control"  type="password">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+       <div class="form-group">
+  <label class="col-md-4 control-label">E-Mail</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+       
+<div class="form-group">
+  <label class="col-md-4 control-label">Contact No.</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="contact_no" placeholder="(639)" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Select Basic -->
+
+<!-- Success message -->
+<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+    </div><!-- /.container -->

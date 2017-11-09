@@ -80,7 +80,7 @@
    </ul>
     <!-- <div class="collapse navbar-colapse" id="bs-example-navbar-1"> -->
     <ul class="nav navbar-nav navbar-right">      
-    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>My cart</a></li>
+    <li><a href="${pageContext.request.contextPath}/goToCart"><span class="glyphicon glyphicon-shopping-cart"></span>My cart</a></li>
       <li><a href="user"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
       <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>

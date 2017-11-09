@@ -16,10 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.dao.CategoryDAO;
 import com.dao.ProductDAO;
 import com.dao.SupplierDAO;
+import com.dao.UserDAO;
 import com.model.Category;
 import com.model.Product;
 import com.model.Supplier;
@@ -36,6 +38,9 @@ public class ProductController {
 	
 	@Autowired
 	SupplierDAO supplierDAO;
+	
+	@Autowired
+	UserDAO userDAO;
 	
 	@RequestMapping(value="product",method=RequestMethod.GET)
 	public String showProduct(Model m)
@@ -271,4 +276,31 @@ public class ProductController {
 	{
 		m.addAttribute("categoryList",category);
 	}*/
+	
+
+	@RequestMapping("productCustList")
+	public ModelAndView productcustList(@RequestParam("catId") int catId,Model m)
+	{
+		
+		System.out.println(catId);
+		ModelAndView mav = new ModelAndView();
+		
+		mav.addObject("productList",productDAO.getProduct(catId));
+		mav.setViewName("ProductCustomerList");
+		return mav;
+	}
+	@ModelAttribute
+	public void fetchData(Model m)
+	{
+		m.addAttribute("catList",categoryDAO.retrieveCategory());
+		m.addAttribute("supList",supplierDAO.retrieveSupplier());
+	}
+	@ModelAttribute
+	public void addAttributes(Model m)
+	{
+		m.addAttribute("categoryList",categoryDAO.retrieveCategory());
+		m.addAttribute("supplierList",supplierDAO.retrieveSupplier());
+		m.addAttribute("userList",userDAO.retrieveUser());
+	}
+	
 }

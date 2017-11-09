@@ -78,7 +78,7 @@
     </ul>
     <!-- <div class="collapse navbar-colapse" id="bs-example-navbar-1"> -->
     <ul class="nav navbar-nav navbar-right">  
-    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>My cart</a></li>  
+    <li><a href="${pageContext.request.contextPath}/goToCart"><span class="glyphicon glyphicon-shopping-cart"></span>My cart</a></li>  
      <li><a href="account"><span class="glyphicon glyphicon-user"></span>Welcome ${sessionScope.username}</a></li>
       <li><a href="index.jsp"><i class="fa fa-sign-out" aria-hidden="true"></i>SignOut</a></li>
     </ul>

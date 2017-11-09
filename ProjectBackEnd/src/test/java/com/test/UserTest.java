@@ -34,7 +34,7 @@ static UserDAO userDAO;
 		User user=new User();
 		user.setUserEmail("levinjobseek@gmail.com");
 		user.setRole("ROLE_ADMIN");
-		user.setEnabled("True");
+		user.setEnabled("TRUE");
 		user.setUserName("Levin");
 		user.setUserPassword("haihello");
 		user.setUserAddress("India");
