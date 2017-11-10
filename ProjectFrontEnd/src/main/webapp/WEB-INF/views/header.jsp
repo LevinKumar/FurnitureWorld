@@ -53,7 +53,7 @@
 <span class="icon bar"></span>
 <span class="icon bar"></span>
 <span class="icon bar"></span>
-<span class="icon bar"></span>
+
 </button>
 </ul>
 </div>
@@ -67,20 +67,12 @@
 	
  <li><a href="index.jsp"><span class="glyphicon glyphicon-home"></span>Home</a></li>
       
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Tables</a></li>
-          <li><a href="#">Sofa</a></li>
-          <li><a href="#">Beds</a></li>          
-        </ul>
-      </li>
     
      <li><a href="viewerHome"><i class="fa fa-product-hunt" aria-hidden="true"></i>Product List</a></li>
-     
-   </ul>
+      <li><a href="${pageContext.request.contextPath}/goToCart"><span class="glyphicon glyphicon-shopping-cart"></span>My cart</a></li>
+</ul>
     <!-- <div class="collapse navbar-colapse" id="bs-example-navbar-1"> -->
     <ul class="nav navbar-nav navbar-right">      
-    <li><a href="${pageContext.request.contextPath}/goToCart"><span class="glyphicon glyphicon-shopping-cart"></span>My cart</a></li>
       <li><a href="user"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
       <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
